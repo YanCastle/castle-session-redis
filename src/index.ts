@@ -13,6 +13,7 @@ export default class SessionRedis extends SessionDriver {
         }
     }
     async exist(SessionID: string) {
+        this.setSessionID(SessionID)
         return (await redis.instance.keys(`${this.getKey('')}*`)).length > 0
     }
     async get(key: string) {
