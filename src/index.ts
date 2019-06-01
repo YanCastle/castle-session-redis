@@ -6,10 +6,10 @@ const redis: {
     instance: undefined
 }
 export default class SessionRedis extends SessionDriver {
-    async start(ctx: any, config: any) {
+    async start(ctx: any, config: any, dc: any) {
         await super.start(ctx, config)
         if (!redis.instance) {
-            redis.instance = new Redis(config);
+            redis.instance = new Redis(dc);
         }
     }
     async exist(SessionID: string) {
