@@ -1,5 +1,5 @@
 import * as Redis from 'ioredis'
-import SessionDriver from 'castle-session/dist/session'
+import SessionDriver from '@ctsy/session/dist/session'
 const redis: {
     instance: Redis.Redis | any
 } = {
